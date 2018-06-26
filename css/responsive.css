@@ -1,0 +1,158 @@
+@media screen and (max-width: 435px) {
+  nav h1 {
+  	padding: 10px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+
+/* ====================== Restaurant Details ====================== */
+  .inside {
+    height: 100%;
+    width: 100%;
+  }
+  .inside header {
+    height: 20%;
+    z-index: 1000;
+  }
+  #breadcrumb {
+    width: 100%;
+    padding: 10px 0 16px;
+  }
+  #breadcrumb li a {
+    padding-left: 10px;
+  }
+  #maincontent {
+    width: 100%;
+  }
+  section {
+    display: flex;
+    flex-direction: column;
+  }
+  .inside #map-container {
+    width: 100%;
+    height: 40%;
+    top: 131px;
+    order: -3;
+  }
+  #restaurant-container {
+    width: 100%;
+    height: auto;
+    padding: 15px 0 40px;
+    order: -2;
+  }
+  #restaurant-img {
+    width: 95%;
+  }
+  #restaurant-cuisine {
+    width: 95%;
+  }
+  #reviews-container {
+    width: 100%;
+    height: auto;
+    padding: 15px 0;
+    order: -2;
+  }
+  #reviews-list li {
+    padding: 0 20px 10px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .inside #footer {
+    width: 100%;
+    padding: 25px 0;
+  }
+}
+
+/*
+@media screen and (min-width: 361px ) and (max-width: 450px) {
+
+/* ====================== Restaurant Details ====================== */
+/*  .inside {
+/*    display: flex;
+    flex-wrap: wrap; */
+/*    height: 100%;
+  }
+
+  .inside header {
+
+    height: 20%;
+  }
+
+  #breadcrumb {
+    width: 87%;
+    padding: 10px 25px 16px;
+  }
+
+  .inside #map-container {
+    width: 100%;
+    height: 20%;
+    position: relative;
+    top: 80px;
+  }
+
+  #restaurant-container {
+    width: 94%;
+    padding: 0 15px;
+
+  }
+
+  #restaurant-img {
+    width: 95%;
+  }
+
+  #restaurant-cuisine {
+    width: 95%;
+  }
+
+  #reviews-container {
+    width: 94%;
+    padding: 15px 15px 0;
+
+  }
+
+  #reviews-list li {
+
+    padding: 0 20px 10px;
+    overflow: auto;
+
+
+  }
+
+  .inside #footer {
+    width: 100%;
+    padding: 25px 0;
+  }
+
+}
+/*
+@media screen and (min-width: 461px) and (max-width: 580px) {
+  .inside {
+/*  	display: flex;
+    flex-direction: column; */
+/*  }
+  header {
+    order: -4;
+    width: 100%;
+  }
+  .inside #map-container {
+    order: -3;
+    width: 100%;
+  }
+  #restaurant-container {
+    order: -2;
+    width: 100%;
+  }
+  #review-container {
+    order: -1;
+    width: 100%;
+  }
+  footer {
+    order: 1;
+    width: 100%;
+  }
+
+
+}
+*/
