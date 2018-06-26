@@ -4,6 +4,27 @@
   }
 }
 
+@media screen and (min-width: 601px) and (max-width: 730px) {
+/* ====================== Restaurant Listing ====================== */
+  #restaurants-list li {
+    width: 220px;
+  }
+}
+
+@media screen and (min-width: 451px) and (max-width: 600px) {
+/* ====================== Restaurant Listing ====================== */
+  #restaurants-list li {
+    width: 270px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+/* ====================== Restaurant Filtering ====================== */
+  .filter-options select  {
+    width: 40%;
+  }
+}
+
 @media screen and (max-width: 550px) {
 
 /* ====================== Restaurant Details ====================== */
@@ -64,95 +85,3 @@
     padding: 25px 0;
   }
 }
-
-/*
-@media screen and (min-width: 361px ) and (max-width: 450px) {
-
-/* ====================== Restaurant Details ====================== */
-/*  .inside {
-/*    display: flex;
-    flex-wrap: wrap; */
-/*    height: 100%;
-  }
-
-  .inside header {
-
-    height: 20%;
-  }
-
-  #breadcrumb {
-    width: 87%;
-    padding: 10px 25px 16px;
-  }
-
-  .inside #map-container {
-    width: 100%;
-    height: 20%;
-    position: relative;
-    top: 80px;
-  }
-
-  #restaurant-container {
-    width: 94%;
-    padding: 0 15px;
-
-  }
-
-  #restaurant-img {
-    width: 95%;
-  }
-
-  #restaurant-cuisine {
-    width: 95%;
-  }
-
-  #reviews-container {
-    width: 94%;
-    padding: 15px 15px 0;
-
-  }
-
-  #reviews-list li {
-
-    padding: 0 20px 10px;
-    overflow: auto;
-
-
-  }
-
-  .inside #footer {
-    width: 100%;
-    padding: 25px 0;
-  }
-
-}
-/*
-@media screen and (min-width: 461px) and (max-width: 580px) {
-  .inside {
-/*  	display: flex;
-    flex-direction: column; */
-/*  }
-  header {
-    order: -4;
-    width: 100%;
-  }
-  .inside #map-container {
-    order: -3;
-    width: 100%;
-  }
-  #restaurant-container {
-    order: -2;
-    width: 100%;
-  }
-  #review-container {
-    order: -1;
-    width: 100%;
-  }
-  footer {
-    order: 1;
-    width: 100%;
-  }
-
-
-}
-*/
