@@ -22,8 +22,9 @@ a {
 	text-decoration: none;
 }
 a:hover, a:focus {
-	color: #3397db;
+	color: #016ab2;
 	text-decoration: none;
+	box-shadow: 0 0 5px 3px #016ab2;
 }
 a img{
 	border: none 0px #fff;

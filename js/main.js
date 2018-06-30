@@ -36,6 +36,9 @@ fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
     const option = document.createElement('option');
     option.innerHTML = neighborhood;
     option.value = neighborhood;
+    option.setAttribute('role', 'option');
+    select.setAttribute('role', 'listbox');
+    select.setAttribute('tabindex', '0');
     select.append(option);
   });
 }
@@ -64,6 +67,9 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
     const option = document.createElement('option');
     option.innerHTML = cuisine;
     option.value = cuisine;
+    option.setAttribute('role', 'option');
+    select.setAttribute('role', 'listbox');
+    select.setAttribute('tabindex', '0');
     select.append(option);
   });
 }
@@ -146,6 +152,7 @@ resetRestaurants = (restaurants) => {
  */
 fillRestaurantsHTML = (restaurants = self.restaurants) => {
   const ul = document.getElementById('restaurants-list');
+  ul.setAttribute('aria-label', 'restaurants list');
   restaurants.forEach(restaurant => {
     ul.append(createRestaurantHTML(restaurant));
   });
@@ -157,10 +164,13 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
  */
 createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
+/*  li.setAttribute("aria-label", "restaurant details"); */
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+/*  image.setAttribute("alt", `${restaurant.name}'s restaurant photo`); */
+  image.alt = restaurant.name + ' Main Image';
   li.append(image);
 
   const name = document.createElement('h1');
@@ -176,6 +186,7 @@ createRestaurantHTML = (restaurant) => {
   li.append(address);
 
   const more = document.createElement('a');
+  more.setAttribute('aria-label', 'View Details for ' + restaurant.name + ", " + restaurant.neighborhood);
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
   li.append(more)
