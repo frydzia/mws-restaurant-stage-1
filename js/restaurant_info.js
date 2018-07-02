@@ -29,6 +29,11 @@ initMap = () => {
           'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         id: 'mapbox.streets'
       }).addTo(newMap);
+
+      // set accessibility
+      document.getElementById('map-container').setAttribute('aria-label', 'map with restaurant');
+      document.getElementById('map').setAttribute('role', 'application');
+
       fillBreadcrumb();
       DBHelper.mapMarkerForRestaurant(self.restaurant, self.newMap);
     }
@@ -107,7 +112,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
  */
 fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => {
   const hours = document.getElementById('restaurant-hours');
-  hours.setAttribute('aria-label', 'opening hours');
+  hours.setAttribute('aria-label', 'opening hours'); // set accessibility
   for (let key in operatingHours) {
     const row = document.createElement('tr');
 
@@ -177,6 +182,10 @@ fillBreadcrumb = (restaurant=self.restaurant) => {
   const li = document.createElement('li');
   li.innerHTML = restaurant.name;
   breadcrumb.appendChild(li);
+
+  // set accessibility
+  breadcrumb.setAttribute('aria-label', 'breadcrumb navigation menu');
+  breadcrumb.setAttribute('role', 'navigation');
 }
 
 /**

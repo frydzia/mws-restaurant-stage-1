@@ -36,9 +36,12 @@ fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
     const option = document.createElement('option');
     option.innerHTML = neighborhood;
     option.value = neighborhood;
+
+    // set accessibility
     option.setAttribute('role', 'option');
     select.setAttribute('role', 'listbox');
     select.setAttribute('tabindex', '0');
+
     select.append(option);
   });
 }
@@ -67,9 +70,12 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
     const option = document.createElement('option');
     option.innerHTML = cuisine;
     option.value = cuisine;
+
+    // set accessibility
     option.setAttribute('role', 'option');
     select.setAttribute('role', 'listbox');
     select.setAttribute('tabindex', '0');
+
     select.append(option);
   });
 }
@@ -91,6 +97,10 @@ initMap = () => {
       'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     id: 'mapbox.streets'
   }).addTo(newMap);
+
+  // set accessibility
+  document.getElementById('map-container').setAttribute('aria-label', 'map with restaurants');
+  document.getElementById('map').setAttribute('role', 'application');
 
   updateRestaurants();
 }
@@ -152,7 +162,7 @@ resetRestaurants = (restaurants) => {
  */
 fillRestaurantsHTML = (restaurants = self.restaurants) => {
   const ul = document.getElementById('restaurants-list');
-  ul.setAttribute('aria-label', 'restaurants list');
+  ul.setAttribute('aria-label', 'restaurants list'); // set accessibility
   restaurants.forEach(restaurant => {
     ul.append(createRestaurantHTML(restaurant));
   });
@@ -173,7 +183,7 @@ createRestaurantHTML = (restaurant) => {
   image.alt = restaurant.name + ' Main Image';
   li.append(image);
 
-  const name = document.createElement('h1');
+  const name = document.createElement('h3');
   name.innerHTML = restaurant.name;
   li.append(name);
 
@@ -186,7 +196,7 @@ createRestaurantHTML = (restaurant) => {
   li.append(address);
 
   const more = document.createElement('a');
-  more.setAttribute('aria-label', 'View Details for ' + restaurant.name + ", " + restaurant.neighborhood);
+  more.setAttribute('aria-label', 'View Details for ' + restaurant.name + ", " + restaurant.neighborhood); // set accessibility
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
   li.append(more)
