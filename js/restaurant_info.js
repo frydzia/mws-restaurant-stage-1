@@ -30,10 +30,10 @@ initMap = () => {
         id: 'mapbox.streets'
       }).addTo(newMap);
 
-      // set accessibility
+/*      // set accessibility
       document.getElementById('map-container').setAttribute('aria-label', 'map with restaurant');
       document.getElementById('map').setAttribute('role', 'application');
-
+*/
       fillBreadcrumb();
       DBHelper.mapMarkerForRestaurant(self.restaurant, self.newMap);
     }
@@ -183,9 +183,10 @@ fillBreadcrumb = (restaurant=self.restaurant) => {
   li.innerHTML = restaurant.name;
   breadcrumb.appendChild(li);
 
-  // set accessibility
+/*  // set accessibility
   breadcrumb.setAttribute('aria-label', 'breadcrumb navigation menu');
   breadcrumb.setAttribute('role', 'navigation');
+*/
 }
 
 /**

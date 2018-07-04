@@ -98,10 +98,10 @@ initMap = () => {
     id: 'mapbox.streets'
   }).addTo(newMap);
 
-  // set accessibility
+/*  // set accessibility
   document.getElementById('map-container').setAttribute('aria-label', 'map with restaurants');
   document.getElementById('map').setAttribute('role', 'application');
-
+*/
   updateRestaurants();
 }
 /* window.initMap = () => {
@@ -174,12 +174,10 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
  */
 createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
-/*  li.setAttribute("aria-label", "restaurant details"); */
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
-/*  image.setAttribute("alt", `${restaurant.name}'s restaurant photo`); */
   image.alt = restaurant.name + ' Main Image';
   li.append(image);
 
