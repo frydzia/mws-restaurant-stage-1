@@ -1,6 +1,7 @@
 var staticCacheName = 'restaurant-static-v1';
 var urlsToCache = [
-  '/skeleton',
+//  '/skeleton',
+  '/',
   '/index.html',
   '/restaurant.html',
   '/css/styles.css',
@@ -9,6 +10,7 @@ var urlsToCache = [
   '/js/dbhelper.js',
   '/js/main.js',
   '/js/restaurant_info.js',
+  '/sw.js',
   '/img/1.jpg',
   '/img/2.jpg',
   '/img/3.jpg',
@@ -41,15 +43,15 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
-  var requestUrl = new URL(event.request.url);
-  if (requestUrl.origin === location.origin) {
-    if (requestUrl.pathname === '/') {
-      event.respondWith(caches.match('/skeleton'));
-      return;
-    }
-  }
+  // var requestUrl = new URL(event.request.url);
+  // if (requestUrl.origin === location.origin) {
+  //   if (requestUrl.pathname === '/') {
+  //     event.respondWith(caches.match('/skeleton'));
+  //     return;
+  //   }
+  // }
   event.respondWith(
-    caches.match(event.request).then(response => {
+    caches.match(event.request, {'ignoreSearch': true}).then(response => {
       return response || fetch(event.request);
     })
     .catch(err => console.log(err, event.request))
