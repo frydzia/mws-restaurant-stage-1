@@ -15,6 +15,8 @@ Convert a static webpage to a mobile-ready web application (focuses on: accessib
   * Python 3.x: `python3 -m http.server 8000`
 4. With your server running, visit the site: `http://localhost:8000`.
 
+You can also see the application [here](https://frydzia.github.io/mws-restaurant-stage-1/).
+
 
 ## Dependencies
 
